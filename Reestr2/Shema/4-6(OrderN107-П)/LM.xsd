@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<xs:schema id="PERS_LIST" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="int_1"> 
+    <xs:restriction base="xs:int"> 
+      <xs:totalDigits value="1"/> 
+    </xs:restriction> 
+  </xs:simpleType>
+
+  <xs:element name="PERS_LIST">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ZGLV" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VERSION" minOccurs="1"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="5"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="DATA" minOccurs="1"> <xs:simpleType> <xs:restriction base="xs:date"> <xs:minInclusive value="1900-01-01"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="FILENAME" minOccurs="1"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="26"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="FILENAME1" minOccurs="1"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="26"/> </xs:restriction> </xs:simpleType> </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PERS" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_PAC" minOccurs="1"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="36"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="FAM" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="40"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="IM" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="40"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="OT" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="40"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="W" minOccurs="1"> <xs:simpleType> <xs:restriction base="xs:int"> <xs:totalDigits value="1"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="DR" minOccurs="1"> <xs:simpleType> <xs:restriction base="xs:date"> <xs:minInclusive value="1900-01-01"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="DOST" nillable="true" minOccurs="0" maxOccurs="unbounded"> 
+                <xs:complexType> 
+                  <xs:simpleContent>
+                    <xs:extension base="int_1">
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>  
+              </xs:element> 
+              <xs:element name="TEL" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="10"/> <xs:maxLength value="100"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="FAM_P" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="40"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="IM_P" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="40"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="OT_P" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="40"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="W_P" minOccurs="0" nillable="true"> <xs:simpleType> <xs:restriction base="xs:int"> <xs:totalDigits value="1"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="DR_P" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:date"> <xs:minInclusive value="1900-01-01"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="DOST_P" nillable="true" minOccurs="0" maxOccurs="unbounded"> 
+                <xs:complexType> 
+                  <xs:simpleContent>
+                    <xs:extension base="int_1">
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>  
+              </xs:element> 
+              <xs:element name="MR" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="100"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="DOCTYPE" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="2"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="DOCSER" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="10"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="DOCNUM" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="20"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="SNILS" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="14"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="OKATOG" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="11"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="OKATOP" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="11"/> </xs:restriction> </xs:simpleType> </xs:element>
+              <xs:element name="COMENTP" minOccurs="0"> <xs:simpleType> <xs:restriction base="xs:string"> <xs:pattern value="^.*[^ ].*$"></xs:pattern> <xs:whiteSpace value="collapse"/> <xs:minLength value="1"/> <xs:maxLength value="250"/> </xs:restriction> </xs:simpleType> </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="ID_PAC"> <xs:selector xpath="PERS"/> <xs:field xpath="ID_PAC"/> </xs:unique>
+    <xs:unique name="FIO_DR_DOC"> <xs:selector xpath="PERS"/> <xs:field xpath="FAM"/> <xs:field xpath="IM"/> <xs:field xpath="OT"/> <xs:field xpath="DR"/> <xs:field xpath="DOCSER"/> <xs:field xpath="DOCNUM"/>  </xs:unique>
+  </xs:element>
+</xs:schema>
